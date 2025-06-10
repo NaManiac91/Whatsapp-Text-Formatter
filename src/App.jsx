@@ -121,6 +121,14 @@ const WhatsAppFormatter = () => {
                     </h3>
                     <div className="grid grid-cols-5 gap-2">
                         <button
+                            onClick={() => applyFormat('spoiler')}
+                            className="p-3 bg-gradient-to-r from-red-100 to-red-200 hover:from-red-200 hover:to-red-300 border-2 border-red-200 hover:border-red-300 rounded-xl transition-all duration-200 flex items-center justify-center text-xs disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md transform hover:scale-105"
+                            title="Make entire text spoiler"
+                            disabled={!inputText.trim()}
+                        >
+                            || 🔒️ ||
+                        </button>
+                        <button
                             onClick={() => applyFormat('bold')}
                             className="p-3 bg-white/80 hover:bg-white border-2 border-gray-200 hover:border-gray-300 rounded-xl font-bold transition-all duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md transform hover:scale-105"
                             title="Make entire text bold"
@@ -151,14 +159,6 @@ const WhatsAppFormatter = () => {
                             disabled={!inputText.trim()}
                         >
                             `M`
-                        </button>
-                        <button
-                            onClick={() => applyFormat('spoiler')}
-                            className="p-3 bg-gradient-to-r from-red-100 to-red-200 hover:from-red-200 hover:to-red-300 border-2 border-red-200 hover:border-red-300 rounded-xl transition-all duration-200 flex items-center justify-center text-xs disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md transform hover:scale-105"
-                            title="Make entire text spoiler"
-                            disabled={!inputText.trim()}
-                        >
-                            || 🔒️ ||
                         </button>
                     </div>
                 </div>
