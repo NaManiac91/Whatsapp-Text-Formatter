@@ -74,12 +74,6 @@ const WhatsAppFormatter = () => {
         }, 0);
     };
 
-    const presetMessages = [
-        "The movie ending: ||The butler did it||",
-        "Game spoiler: ||The princess is in another castle||",
-        "News: ||Election results will be announced tomorrow||"
-    ];
-
     return (
         <div className="max-w-md mx-auto bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen shadow-2xl">
             {/* Header */}
@@ -88,11 +82,33 @@ const WhatsAppFormatter = () => {
                     <div className="p-2 bg-white/20 rounded-full">
                         <MessageSquare size={20} />
                     </div>
-                    <h1 className="text-lg font-bold tracking-wide">WA Formatter</h1>
+                    <h2 className="text-lg font-bold tracking-wide">WA Text Formatter</h2>
                 </div>
             </div>
 
             <div className="p-4 space-y-6">
+                {/* Usage Guide */}
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl border-2 border-blue-200 shadow-inner">
+                    <h4 className="font-semibold text-sm mb-3 text-blue-800 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                        How to Use:
+                    </h4>
+                    <div className="text-xs text-blue-700 space-y-2">
+                        <div className="flex items-center gap-2">
+                            <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
+                            Type your message in the text box
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
+                            Click a formatting button to apply style to entire text
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
+                            Copy the formatted result to WhatsApp
+                        </div>
+                    </div>
+                </div>
+
                 {/* Input Section */}
                 <div className="space-y-2">
                     <label className="block text-sm font-semibold text-gray-700 flex items-center gap-2">
@@ -104,7 +120,7 @@ const WhatsAppFormatter = () => {
                             id="inputText"
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
-                            placeholder="Type here... Use ||text|| for spoilers, *bold*, _italic_, ~strike~, `mono`"
+                            placeholder="Your text..."
                             className="w-full h-32 p-4 border-2 border-gray-200 rounded-xl resize-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80 backdrop-blur-sm shadow-inner placeholder-gray-400"
                         />
                         <div className="absolute top-2 right-2 text-xs text-gray-400 bg-white/80 px-2 py-1 rounded-full">
@@ -126,7 +142,7 @@ const WhatsAppFormatter = () => {
                             title="Make entire text spoiler"
                             disabled={!inputText.trim()}
                         >
-                            || 🔒️ ||
+                            🔒
                         </button>
                         <button
                             onClick={() => applyFormat('bold')}
@@ -192,49 +208,6 @@ const WhatsAppFormatter = () => {
                     {copySuccess ? 'Copied!' : 'Copy to Clipboard'}
                 </button>
 
-                {/* Quick Examples */}
-                <div className="space-y-3">
-                    <h3 className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                        <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-                        Quick Examples:
-                    </h3>
-                    <div className="space-y-2">
-                        {presetMessages.map((msg, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setInputText(msg)}
-                                className="w-full p-3 text-left bg-white/80 hover:bg-white border-2 border-blue-100 hover:border-blue-200 rounded-xl text-sm transition-all duration-200 shadow-sm hover:shadow-md transform hover:scale-[1.02]"
-                            >
-                                <span className="text-blue-600 font-medium">Example {index + 1}:</span>
-                                <br />
-                                <span className="text-gray-600">{msg}</span>
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Usage Guide */}
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl border-2 border-blue-200 shadow-inner">
-                    <h4 className="font-semibold text-sm mb-3 text-blue-800 flex items-center gap-2">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                        How to Use:
-                    </h4>
-                    <div className="text-xs text-blue-700 space-y-2">
-                        <div className="flex items-center gap-2">
-                            <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
-                            Type your message in the text box
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
-                            Click a formatting button to apply style to entire text
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
-                            Copy the formatted result to WhatsApp
-                        </div>
-                    </div>
-                </div>
-
                 <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-xl border-2 border-yellow-200 shadow-inner">
                     <h4 className="font-semibold text-sm mb-3 text-yellow-800 flex items-center gap-2">
                         <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
@@ -262,7 +235,7 @@ const WhatsAppFormatter = () => {
                             <span className="font-mono bg-gray-200 px-1 rounded">Monospace in WhatsApp</span>
                         </div>
                         <div className="flex items-center justify-between bg-white/50 p-2 rounded-lg">
-                            <span className="font-mono">||spoiler||</span>
+                            <span className="font-mono">spoiler</span>
                             <span>→</span>
                             <span className="bg-red-100 px-2 py-1 rounded">[SPOILER] ...Read more</span>
                         </div>
