@@ -215,6 +215,11 @@ const WhatsAppFormatter = () => {
                     </h4>
                     <div className="text-xs text-yellow-700 space-y-2">
                         <div className="flex items-center justify-between bg-white/50 p-2 rounded-lg">
+                            <span className="font-mono">spoiler</span>
+                            <span>→</span>
+                            <span className="bg-red-100 px-2 py-1 rounded">[SPOILER] ...Read more</span>
+                        </div>
+                        <div className="flex items-center justify-between bg-white/50 p-2 rounded-lg">
                             <span className="font-mono">*bold text*</span>
                             <span>→</span>
                             <strong>Bold in WhatsApp</strong>
@@ -233,11 +238,6 @@ const WhatsAppFormatter = () => {
                             <span className="font-mono">`mono text`</span>
                             <span>→</span>
                             <span className="font-mono bg-gray-200 px-1 rounded">Monospace in WhatsApp</span>
-                        </div>
-                        <div className="flex items-center justify-between bg-white/50 p-2 rounded-lg">
-                            <span className="font-mono">spoiler</span>
-                            <span>→</span>
-                            <span className="bg-red-100 px-2 py-1 rounded">[SPOILER] ...Read more</span>
                         </div>
                     </div>
                 </div>
