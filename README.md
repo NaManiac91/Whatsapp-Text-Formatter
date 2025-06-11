@@ -1,7 +1,7 @@
-✨ Whatsapp-Text-Formatter
+✨ <a href="https://namaniac91.github.io/Whatsapp-Text-Formatter/">Whatsapp-Text-Formatter</a><br>
 Whatsapp-Text-Formatter is a simple and elegant app that allows users to apply different styles to their text and share it directly on WhatsApp. Want to make your messages stand out? Bold, italicize, strikethrough, or monospace your text with ease!
 
-🔠 Text Styling Options
+🔠 Text Styling Options<br>
 Apply various WhatsApp-supported text styles:
 
 Spoiler - Bold - Italic - Strikethrough - Monospace
